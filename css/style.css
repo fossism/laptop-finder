@@ -1,0 +1,28 @@
+/* LaptopFinder — Bodhya + Cloudflare editorial theme */
+html { scroll-behavior: smooth; }
+body { background: #FFF8F3; color: #241E1B; }
+::selection { background: #AD544B; color: white; }
+.hairline { border-color: #E8DDD3; }
+.spec-card:hover { transform: translateY(-2px); }
+.quiz-progress { transition: width .5s cubic-bezier(.4,0,.2,1); }
+
+/* Cloudflare-like subtle dot grid */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(36,30,27,0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* editorial rule */
+.rule { height: 1px; background: #E8DDD3; }
+
+/* focus visible for accessibility */
+*:focus-visible { outline: 2px solid #AD544B; outline-offset: 2px; }
+
+/* details chevron */
+details[open] summary .chev { transform: rotate(180deg); }
+
+/* scrollbar thin */
+* { scrollbar-width: thin; scrollbar-color: #E8DDD3 transparent; }
+
+/* smooth card hover */
+.spec-card { transition: transform .2s ease, box-shadow .2s ease; }
