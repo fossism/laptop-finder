@@ -13,18 +13,18 @@
 
     // calculators
     const ramRange=document.getElementById('ramRange'), ramVal=document.getElementById('ramVal'), ramAdvice=document.getElementById('ramAdvice');
-    const advices={4:['4GB — will lag badly','text-terracotta'],8:['8GB — ok for light use only','text-amber-700'],12:['12GB — decent but 16GB better','text-teal'],16:['Perfect — future proof for 4 years','text-teal'],20:['20GB — overkill but great','text-teal'],24:['24GB — pro level','text-teal'],32:['32GB — only for heavy ML/gaming','text-label']};
+    const advices={4:['4GB – will lag badly','text-terracotta'],8:['8GB – ok for light use only','text-amber-700'],12:['12GB – decent but 16GB better','text-teal'],16:['Perfect – future proof for 4 years','text-teal'],20:['20GB – overkill but great','text-teal'],24:['24GB – pro level','text-teal'],32:['32GB – only for heavy ML/gaming','text-label']};
     function updateRam(){let v=parseInt(ramRange.value); ramVal.textContent=v+'GB'; let a=advices[v]||advices[16]; ramAdvice.textContent=a[0]; ramAdvice.className='font-mono text-[11px] mt-1 font-bold '+a[1];}
     ramRange?.addEventListener('input',updateRam); updateRam();
     const storageRange=document.getElementById('storageRange'), storageVal=document.getElementById('storageVal'), storageAdvice=document.getElementById('storageAdvice');
-    const sAdv={256:['256GB — fills in 1 sem','text-terracotta'],512:['Sweet spot','text-teal'],768:['768GB — comfortable','text-teal'],1024:['1TB — creators/gamers','text-label']};
+    const sAdv={256:['256GB – fills in 1 sem','text-terracotta'],512:['Sweet spot','text-teal'],768:['768GB – comfortable','text-teal'],1024:['1TB – creators/gamers','text-label']};
     function updateStorage(){let v=parseInt(storageRange.value); storageVal.textContent=(v>=1024?'1TB SSD':v+'GB SSD'); let a=sAdv[v]||sAdv[512]; storageAdvice.textContent=a[0]; storageAdvice.className='font-mono text-[11px] mt-1 font-bold '+a[1];}
     storageRange?.addEventListener('input',updateStorage); updateStorage();
     document.querySelectorAll('.budget-btn').forEach(b=>b.addEventListener('click',()=>{
       document.querySelectorAll('.budget-btn').forEach(x=>x.className='budget-btn h-8 border hairline font-mono text-xs font-bold bg-white');
       b.className='budget-btn h-8 border-2 border-ink bg-ink text-cream font-mono text-xs font-bold';
       const v=b.dataset.budget;
-      const map={35:'At ~35K: Aim Ryzen 5 7520U, 16GB, 512GB, FHD — value king for BA/BCom.',55:'At 50-60K: Aim Ryzen 7 7730U, 16GB, 512GB, OLED. Beast value.',90:'At 80-100K: MacBook Air M2/M3 or RTX 4050 — premium & future proof.'}
+      const map={35:'At ~35K: Aim Ryzen 5 7520U, 16GB, 512GB, FHD – value king for BA/BCom.',55:'At 50-60K: Aim Ryzen 7 7730U, 16GB, 512GB, OLED. Beast value.',90:'At 80-100K: MacBook Air M2/M3 or RTX 4050 – premium & future proof.'}
       document.getElementById('budgetAdvice').textContent=map[v];
     }));
 
@@ -87,7 +87,7 @@
       let title='', spec='', why='', cards=[];
       if(purpose==='coding'){
         if(budget==='100' || os==='mac'){
-          title='MacBook Air M2/M3 — 16GB is your best investment';
+          title='MacBook Air M2/M3 – 16GB is your best investment';
           spec='M2/M3 • 16GB unified • 512GB • 15–18h • 1.24kg';
           why='CSE needs Unix, long battery for labs, and silent typing. M2 beats any Windows under 1L in battery & build.';
           cards=[
@@ -95,7 +95,7 @@
             {name:'Lenovo ThinkPad E14 Gen5 (Ryzen 7)', price:'₹64,990', tag:'Value Win', href:'https://www.amazon.in/s?k=ThinkPad+E14+Gen+5', desc:'If not Mac: upgradeable, great keyboard.'},
           ];
         } else if(budget==='55' || budget==='75'){
-          title='ASUS VivoBook 15 OLED / ThinkPad E14 — perfect for CSE';
+          title='ASUS VivoBook 15 OLED / ThinkPad E14 – perfect for CSE';
           spec='Ryzen 7 7730U / i5-1335U • 16GB • 512GB OLED • 8–10h';
           why='You need 16GB + OLED for long coding nights. These give Mac-like display at half price.';
           cards=[
@@ -103,7 +103,7 @@
             {name:'Lenovo IdeaPad Slim 5 (7840U, 16GB)', price:'₹62,990', tag:'Thin & Light', href:'https://www.amazon.in/s?k=Lenovo+IdeaPad+Slim+5+7840U', desc:'Lighter + 10h battery.'},
           ];
         } else {
-          title='Stretch to 16GB — even at 35K';
+          title='Stretch to 16GB – even at 35K';
           spec='Ryzen 5 7520U • 16GB • 512GB • FHD IPS';
           why='At 35K, 16GB is rare but must hunt. Avoid 8GB soldered or you’ll regret in Sem 3.';
           cards=[
@@ -114,10 +114,10 @@
       } else if(purpose==='design'){
         title='Creator: OLED + 16GB + RTX/Mac';
         spec='OLED 2.8K 100% DCI-P3 • 16GB • 512GB • RTX 4050 or M3';
-        why='Design needs colour accuracy. OLED is not luxury — it’s your tool.';
+        why='Design needs colour accuracy. OLED is not luxury – it’s your tool.';
         cards=[
           {name:'ASUS VivoBook Pro 15 OLED (RTX 4050)', price:'₹84,990', tag:'Creator', href:'https://www.amazon.in/s?k=VivoBook+Pro+15+OLED+RTX', desc:'OLED + 4050 = best value.'},
-          {name:'MacBook Air M3 16GB', price:'₹1,02,000', tag:'Colour King', href:'https://www.amazon.in/s?k=MacBook+Air+M3+16GB', desc:'If budget allows — P3 + silent.'},
+          {name:'MacBook Air M3 16GB', price:'₹1,02,000', tag:'Colour King', href:'https://www.amazon.in/s?k=MacBook+Air+M3+16GB', desc:'If budget allows – P3 + silent.'},
         ];
       } else if(purpose==='engineering'){
         title='Engineering: Need RTX for CAD';
@@ -129,7 +129,7 @@
         ];
       } else if(purpose==='gaming'){
         if(gaming==='heavy'){
-          title='Gaming + Study — LOQ/Nitro is your pick';
+          title='Gaming + Study – LOQ/Nitro is your pick';
           spec='RTX 4050 • 16GB • 144Hz • 512GB';
           why='Heavy gaming needs RTX. Accept 2.4kg & 4h battery.';
           cards=[
@@ -137,7 +137,7 @@
             {name:'ASUS TUF A15 RTX 4050', price:'₹89,990', tag:'Tough', href:'https://www.amazon.in/s?k=ASUS+TUF+A15', desc:'MIL-STD, better cooling.'},
           ];
         } else {
-          title='Don’t buy full gaming — get OLED + casual GPU';
+          title='Don’t buy full gaming – get OLED + casual GPU';
           spec='Ryzen 7 7730U • 16GB • RTX 3050 (optional)';
           why='Casual Valorant runs on 780M iGPU. Save weight & get battery.';
           cards=[
@@ -157,7 +157,7 @@
         } else {
           title='Business: Thin, light, all-day';
           spec='Ryzen 7 7730U • 16GB • OLED • 1.39kg • 10h';
-          why='Excel/PPT/Zoom don’t need GPU — need keyboard & battery.';
+          why='Excel/PPT/Zoom don’t need GPU – need keyboard & battery.';
           cards=[
             {name:'Lenovo IdeaPad Slim 5 (7840U)', price:'₹62,990', tag:'Best B-School', href:'https://www.amazon.in/s?k=IdeaPad+Slim+5', desc:'Metal, 10h, fingerprint.'},
             {name:'ASUS VivoBook 15 OLED', price:'₹49,990', tag:'Value', href:'https://www.amazon.in/s?k=VivoBook+15+OLED', desc:'Best under 50k for MBA.'},
@@ -165,7 +165,7 @@
         }
       } else {
         if(budget==='35'){
-          title='General College: Save money — 35K is enough';
+          title='General College: Save money – 35K is enough';
           spec='Ryzen 5 7520U • 16GB • 512GB • FHD';
           why='Notes, PDFs, YouTube don’t need RTX. Invest saved money in SSD/RAM.';
           cards=[{name:'HP 15s / Acer Aspire Lite', price:'₹33,990', tag:'Save', href:'https://www.amazon.in/s?k=HP+15s+Ryzen+5+7520U', desc:'Good enough for 4 years.'}];
