@@ -48,6 +48,15 @@
       });
     });
 
+    // buttons previously wired via inline onclick (CSP-friendly)
+    document.getElementById('seeBudgetBtn')?.addEventListener('click',()=>{
+      document.getElementById('budget')?.scrollIntoView({behavior:'smooth'});
+    });
+    document.getElementById('printChecklistBtn')?.addEventListener('click',()=>window.print());
+    document.getElementById('backToTop')?.addEventListener('click',(e)=>{
+      e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});
+    });
+
     // QUIZ
     let step=1;
     const answers={};
