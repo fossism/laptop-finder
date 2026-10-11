@@ -40,12 +40,25 @@
       });
     });
 
-    // checklist copy
+    // checklist copy (with fallback for non-secure contexts / denied permission)
+    const showCopyMsg=(ok)=>{
+      const m=document.getElementById('copyMsg'); if(!m) return;
+      m.textContent= ok ? 'Copied to clipboard ✓' : 'Copy failed - select and copy manually';
+      m.classList.remove('hidden'); setTimeout(()=>m.classList.add('hidden'),2500);
+    };
     document.getElementById('copyChecklist')?.addEventListener('click',()=>{
       const text=[...document.querySelectorAll('#checklist input')].map((cb)=> (cb.checked?'☑ ':'☐ ')+cb.nextElementSibling.textContent.trim()).join('\n');
-      navigator.clipboard.writeText('LaptopFinder Checklist (2026)\n'+text).then(()=>{
-        const m=document.getElementById('copyMsg'); m.classList.remove('hidden'); setTimeout(()=>m.classList.add('hidden'),2000);
-      });
+      const full='LaptopFinder Checklist (2026)\n'+text;
+      const legacyCopy=()=>{ // fallback: hidden textarea + execCommand
+        try{
+          const ta=document.createElement('textarea');
+          ta.value=full; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.opacity='0';
+          document.body.appendChild(ta); ta.select();
+          const ok=document.execCommand('copy'); ta.remove(); showCopyMsg(ok);
+        }catch(e){ showCopyMsg(false); }
+      };
+      if(navigator.clipboard && window.isSecureContext){ navigator.clipboard.writeText(full).then(()=>showCopyMsg(true), legacyCopy); }
+      else legacyCopy();
     });
 
     // buttons previously wired via inline onclick (CSP-friendly)
