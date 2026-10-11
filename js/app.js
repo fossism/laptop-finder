@@ -61,6 +61,12 @@
       else legacyCopy();
     });
 
+    // image fallback: if a hotlinked product photo breaks, swap to local favicon (capture phase: error events don't bubble)
+    document.addEventListener('error',(e)=>{
+      const t=e.target;
+      if(t && t.tagName==='IMG' && t.dataset.fallback && !t.dataset.fbk){ t.dataset.fbk='1'; t.src=t.dataset.fallback; }
+    }, true);
+
     // buttons previously wired via inline onclick (CSP-friendly)
     document.getElementById('seeBudgetBtn')?.addEventListener('click',()=>{
       document.getElementById('budget')?.scrollIntoView({behavior:'smooth'});
