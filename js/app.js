@@ -208,7 +208,7 @@
       cards.forEach(c=>{
         const a=mk('a','flex gap-3 p-3 border hairline bg-white hover:bg-creamTint transition');
         a.href=isSafeUrl(c.href)?c.href:'#';
-        a.target='_blank'; a.rel='noopener';
+        a.target='_blank'; a.rel='nofollow sponsored noopener';
         const icon=mk('div','w-12 h-12 border hairline bg-creamTint flex items-center justify-center shrink-0');
         icon.appendChild(mk('i','ri-macbook-line text-label'));
         const body=mk('div','flex-1 min-w-0');
