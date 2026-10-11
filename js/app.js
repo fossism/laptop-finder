@@ -180,17 +180,26 @@
       document.getElementById('resultSpec').textContent=spec;
       document.getElementById('resultWhy').textContent=why;
       const cardsEl=document.getElementById('resultCards');
-      cardsEl.innerHTML=cards.map(c=>`
-        <a href="${c.href}" target="_blank" class="flex gap-3 p-3 border hairline bg-white hover:bg-creamTint transition">
-          <div class="w-12 h-12 border hairline bg-creamTint flex items-center justify-center shrink-0"><i class="ri-macbook-line text-label"></i></div>
-          <div class="flex-1 min-w-0">
-            <p class="font-sans font-bold text-xs leading-tight">${c.name}</p>
-            <p class="font-body text-xs text-body">${c.desc}</p>
-            <p class="font-display text-xs mt-1">${c.price} <span class="font-mono text-[10px] font-normal text-label">• Amazon</span></p>
-          </div>
-          <span class="self-center font-mono text-[10px] tracking-widest uppercase bg-ink text-cream px-2 py-1 shrink-0">${c.tag}</span>
-        </a>
-      `).join('') + `<p class="font-mono text-[10px] tracking-wide text-label text-center">Sale ref price. Live price varies. Each link opens one exact model. Seller = Appario or Official.</p>`;
+      cardsEl.replaceChildren(); // safe render: no HTML parsing, all text set via textContent
+      const mk=(tag, cls, text)=>{ const n=document.createElement(tag); if(cls) n.className=cls; if(text!=null) n.textContent=text; return n; };
+      const isSafeUrl=(u)=>{ try{ const p=new URL(u, location.origin); return p.protocol==='http:'||p.protocol==='https:'; }catch(e){ return false; } };
+      cards.forEach(c=>{
+        const a=mk('a','flex gap-3 p-3 border hairline bg-white hover:bg-creamTint transition');
+        a.href=isSafeUrl(c.href)?c.href:'#';
+        a.target='_blank'; a.rel='noopener';
+        const icon=mk('div','w-12 h-12 border hairline bg-creamTint flex items-center justify-center shrink-0');
+        icon.appendChild(mk('i','ri-macbook-line text-label'));
+        const body=mk('div','flex-1 min-w-0');
+        body.appendChild(mk('p','font-sans font-bold text-xs leading-tight',c.name));
+        body.appendChild(mk('p','font-body text-xs text-body',c.desc));
+        const price=mk('p','font-display text-xs mt-1',c.price+' ');
+        price.appendChild(mk('span','font-mono text-[10px] font-normal text-label','• Amazon'));
+        body.appendChild(price);
+        a.appendChild(icon); a.appendChild(body);
+        a.appendChild(mk('span','self-center font-mono text-[10px] tracking-widest uppercase bg-ink text-cream px-2 py-1 shrink-0',c.tag));
+        cardsEl.appendChild(a);
+      });
+      cardsEl.appendChild(mk('p','font-mono text-[10px] tracking-wide text-label text-center','Sale ref price. Live price varies. Each link opens one exact model. Seller = Appario or Official.'));
       quizIdle.classList.add('hidden');
       quizResult.classList.remove('hidden');
       if(window.innerWidth < 1024) quizResult.scrollIntoView({behavior:'smooth', block:'start'});
