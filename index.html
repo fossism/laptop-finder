@@ -506,7 +506,6 @@
       <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-0">
         <div class="p-6 sm:p-8 border-b lg:border-b-0 lg:border-r hairline">
                     <h2 class="font-display text-[28px] sm:text-[34px] leading-[0.95] mt-2">Find Your Laptop<br>in 5 Clicks</h2>
-          <p class="font-body text-sm leading-relaxed text-body mt-2">No jargon. Just tap what you do, your budget, and we'll tell you exact specs + 2-3 real models to buy in India.</p>
 
           <div class="mt-6">
             <div class="flex items-center justify-between font-mono text-[11px] tracking-widest uppercase">
@@ -589,7 +588,7 @@
             </div>
             <div class="mt-4 border-l-2 border-terracotta bg-white p-3 flex gap-3">
               <span class="text-terracotta">-</span>
-              <p class="font-body text-xs leading-relaxed"><b class="font-sans">Freshers' #1 mistake:</b> Buying gaming laptop for coding branch. Heavy + 4h battery = regret in lectures.</p>
+              <p class="font-body text-sm leading-relaxed"><b class="font-sans">Freshers' #1 mistake:</b> Buying gaming laptop for coding branch. Heavy + 4h battery = regret in lectures.</p>
             </div>
           </div>
           <div id="quizResult" class="hidden flex-1 flex flex-col">
@@ -616,6 +615,7 @@
     <div class="flex flex-wrap items-end justify-between gap-4 border-b hairline pb-6">
       <div>
                 <h2 class="font-display text-[26px] sm:text-[34px] leading-none mt-2">Real Models to Buy<br>Right Now</h2>
+        <span class="mt-2 inline-flex items-center gap-1.5 border hairline bg-white px-2.5 py-1 font-mono text-[10px] tracking-widest uppercase text-label"><span class="w-1.5 h-1.5 rounded-full bg-teal"></span>Prices checked · Oct 2026</span>
       </div>
       <div class="flex gap-2">
         <button data-filter="all" class="filter-btn px-4 h-8 bg-ink text-cream font-mono text-xs tracking-widest uppercase font-bold">All</button>
@@ -851,6 +851,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky share: icon only, no clutter -->
+  <button id="shareBtn" aria-label="Share LaptopFinder on WhatsApp" class="fixed bottom-5 right-5 z-50 w-12 h-12 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition">
+    <i class="ri-whatsapp-line text-2xl"></i>
+  </button>
 
   <script src="js/app.js"></script>
 </body>

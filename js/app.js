@@ -76,6 +76,13 @@
       e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});
     });
 
+    // sticky share: native sheet where supported, WhatsApp fallback otherwise
+    document.getElementById('shareBtn')?.addEventListener('click', async ()=>{
+      const shareData={title:document.title, text:'LaptopFinder - honest laptop picks for freshers. No sponsorship.', url:location.href};
+      if(navigator.share){ try{ await navigator.share(shareData); }catch(e){} }
+      else window.open('https://wa.me/?text='+encodeURIComponent(shareData.text+' '+shareData.url),'_blank','noopener');
+    });
+
     // QUIZ
     let step=1;
     const answers={};
