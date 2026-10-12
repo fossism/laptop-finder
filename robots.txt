@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fossism.github.io/laptop-finder/sitemap.xml
