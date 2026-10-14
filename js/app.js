@@ -249,7 +249,7 @@
 
     document.querySelectorAll('[data-purpose]').forEach(chip=>chip.addEventListener('click', e=>{
       e.preventDefault();
-      const tabMap={coding:'coding',design:'design',engineering:'engineering',business:'business',general:'general'};
+      const tabMap={coding:'coding',design:'design',engineering:'engineering',business:'business',general:'general',gaming:'gaming'};
       const tab=tabMap[chip.dataset.purpose] || 'coding';
       document.querySelector(`[data-tab="${tab}"]`)?.click();
       document.getElementById('purpose').scrollIntoView({behavior:'smooth'});
