@@ -139,12 +139,12 @@
             {name:'Lenovo IdeaPad Slim 5 (R7 7735HS, 16GB)', price:'₹62,990 ref', tag:'Thin & Light', href:'https://www.amazon.in/Lenovo-IdeaPad-Integrated-Graphics-83J2000HIN/dp/B0DVGF96B4', desc:'Lighter + 10h battery.'},
           ];
         } else {
-          title='Stretch to 16GB - even at 35K';
-          spec='Ryzen 5 7520U • 16GB • 512GB • FHD IPS';
-          why='At 35K, 16GB is rare but must hunt. Avoid 8GB soldered or you’ll regret in Sem 3.';
+          title='Stretch to 50-60K for real 16GB';
+          spec='Intel Core 5 210H • 16GB • 512GB • thin-light';
+          why='We list no 35K pick with 16GB right now - and 8GB soldered will hurt by Sem 3. These two Flipkart picks are the cheapest honest 16GB buys.';
           cards=[
-            {name:'HP 15s Ryzen 5 7520U (16GB)', price:'₹33,990 ref', tag:'Budget CS', href:'https://www.amazon.in/HP-Anti-Glare-Micro-Edge-fc0690au-Graphics/dp/B0CY2PLQ8N', desc:'Only budget option with 16GB.'},
-            {name:'Lenovo IdeaPad Slim 3 (R5 5625U, 16GB)', price:'₹36,500 ref', tag:'Durable', href:'https://www.amazon.in/Lenovo-1920x1080-Anti-Glare-DDR4-3200-82XM0118IN/dp/B0FMYH7FWT', desc:'Better build + upgradeable.'},
+            {name:'ASUS ExpertBook P1 P1403CVA (16GB)', price:'Flipkart · live varies', tag:'Business Pick', store:'Flipkart', href:'https://www.flipkart.com/asus-expertbook-p1-1-yr-adp-i5-14th-gen-intel-core-5-210h-16-gb-512-gb-ssd-windows-11-home-p1403cva-s61565ws-p1403cvayb-s62423ws-thin-light-laptop/p/itmd8d14da7d4e32?pid=COMHGYAFJWATPZ8K&marketplace=FLIPKART&lid=LSTCOMHGYAFJWATPZ8KIFU7U0', desc:'1-Yr ADP cover, upgradeable business build.'},
+            {name:'Motorola Motobook 60 (16GB OLED)', price:'Flipkart · live varies', tag:'Display King', store:'Flipkart', href:'https://www.flipkart.com/motorola-motobook-60-full-metal-2-8k-oled-i5-14th-gen-intel-core-5-series-2-210h-16-gb-512-gb-ssd-windows-11-home-14irh10r-thin-light-laptop/p/itme7b254581c42e?pid=COMHAUZW4MMNNCGT&lid=LSTCOMHAUZW4MMNNCGTEVATRK&marketplace=FLIPKART&cmpid=content_computer_8965229628_gmc', desc:'2.8K OLED + metal body at this price.'},
           ];
         }
       } else if(purpose==='design'){
@@ -229,7 +229,7 @@
         body.appendChild(mk('p','font-sans font-bold text-xs leading-tight',c.name));
         body.appendChild(mk('p','font-body text-xs text-body',c.desc));
         const price=mk('p','font-display text-xs mt-1',c.price+' ');
-        price.appendChild(mk('span','font-mono text-[10px] font-normal text-label','• Amazon'));
+        price.appendChild(mk('span','font-mono text-[10px] font-normal text-label','• '+(c.store||'Amazon')));
         body.appendChild(price);
         a.appendChild(icon); a.appendChild(body);
         a.appendChild(mk('span','self-center font-mono text-[10px] tracking-widest uppercase bg-ink text-cream px-2 py-1 shrink-0',c.tag));
