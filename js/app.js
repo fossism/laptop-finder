@@ -76,11 +76,12 @@
       e.preventDefault(); window.scrollTo({top:0,behavior:'smooth'});
     });
 
-    // sticky share: native sheet where supported, WhatsApp fallback otherwise
-    document.getElementById('shareBtn')?.addEventListener('click', async ()=>{
-      const shareData={title:document.title, text:'LaptopFinder - honest laptop picks for freshers. No sponsorship.', url:location.href};
-      if(navigator.share){ try{ await navigator.share(shareData); }catch(e){} }
-      else window.open('https://wa.me/?text='+encodeURIComponent(shareData.text+' '+shareData.url),'_blank','noopener');
+    // sticky share: the button is a plain wa.me link (never blocked); upgrade to the native
+    // share sheet with the exact current URL only where supported
+    document.getElementById('shareBtn')?.addEventListener('click', async (e)=>{
+      if(!navigator.share) return; // let the link navigate normally
+      e.preventDefault();
+      try{ await navigator.share({title:document.title, text:'LaptopFinder - honest laptop picks for freshers. No sponsorship.', url:location.href}); }catch(err){}
     });
 
     // QUIZ
