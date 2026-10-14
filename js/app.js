@@ -1,5 +1,6 @@
 // mobile
     document.getElementById('mobileMenuBtn')?.addEventListener('click', ()=> document.getElementById('mobileMenu').classList.toggle('hidden'));
+    document.querySelectorAll('#mobileMenu a').forEach(a=>a.addEventListener('click', ()=> document.getElementById('mobileMenu').classList.add('hidden')));
 
     // tabs
     document.querySelectorAll('.tab-btn').forEach(btn=>{
