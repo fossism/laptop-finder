@@ -156,21 +156,21 @@
           {name:'MacBook Air M3 16GB', price:'₹1,02,000 ref', tag:'Colour King', href:'https://www.amazon.in/Apple-MacBook-13-inch-8-core-Unified/dp/B0DLHDZ7FL', desc:'If budget allows - P3 + silent.'},
         ];
       } else if(purpose==='engineering'){
-        title='Engineering: Need RTX for CAD';
-        spec='i5-13450HX + RTX 4050 • 16GB DDR5 • 512GB • 144Hz';
-        why='SolidWorks and AutoCAD will crawl without dedicated GPU. You trade weight for power.';
+        title='Engineering: no RTX pick listed yet';
+        spec='Closest honest 16GB picks • GPU pick coming';
+        why='SolidWorks and AutoCAD need a dedicated GPU, and none of our 4 listed picks has one. These are the closest honest buys - check back for a gaming pick.';
         cards=[
-          {name:'Lenovo LOQ 15 83DV007GIN (RTX 4050)', price:'₹83,490 ref', tag:'Best Mech', href:'https://www.amazon.in/Lenovo-i5-13450HX-300Nits-Graphics-83DV007GIN/dp/B0D49W5KZP', desc:'Best thermals in range.'},
-          {name:'Acer Nitro V ANV15-51 (RTX 4050)', price:'₹82,990 ref', tag:'Budget CAD', href:'https://www.amazon.in/Acer-i5-13420H-Processor-Graphics-ANV15-51/dp/B0CHJJZ9G8', desc:'Cheaper if tight.'},
+          {name:'ASUS ExpertBook P1 P1403CVA (16GB)', price:'Flipkart · live varies', tag:'Business Pick', store:'Flipkart', href:'https://www.flipkart.com/asus-expertbook-p1-1-yr-adp-i5-14th-gen-intel-core-5-210h-16-gb-512-gb-ssd-windows-11-home-p1403cva-s61565ws-p1403cvayb-s62423ws-thin-light-laptop/p/itmd8d14da7d4e32?pid=COMHGYAFJWATPZ8K&marketplace=FLIPKART&lid=LSTCOMHGYAFJWATPZ8KIFU7U0', desc:'1-Yr ADP cover, upgradeable business build.'},
+          {name:'Motorola Motobook 60 (16GB OLED)', price:'Flipkart · live varies', tag:'Display King', store:'Flipkart', href:'https://www.flipkart.com/motorola-motobook-60-full-metal-2-8k-oled-i5-14th-gen-intel-core-5-series-2-210h-16-gb-512-gb-ssd-windows-11-home-14irh10r-thin-light-laptop/p/itme7b254581c42e?pid=COMHAUZW4MMNNCGT&lid=LSTCOMHAUZW4MMNNCGTEVATRK&marketplace=FLIPKART&cmpid=content_computer_8965229628_gmc', desc:'2.8K OLED + metal body at this price.'},
         ];
       } else if(purpose==='gaming'){
         if(gaming==='heavy'){
-          title='Gaming + Study - LOQ is your pick';
-          spec='RTX 4050 • 16GB • 144Hz • 512GB';
-          why='Heavy gaming needs RTX. Accept 2.4kg and 4h battery.';
+          title='Heavy gaming needs RTX - not listed yet';
+          spec='Closest 16GB picks • RTX pick coming';
+          why='Heavy AAA gaming needs an RTX GPU, which none of our 4 listed picks has. These two run light games fine - check back for a real gaming pick.';
           cards=[
-            {name:'Lenovo LOQ 15 RTX 4050', price:'₹83,490 ref', tag:'Top Game', href:'https://www.amazon.in/Lenovo-i5-13450HX-300Nits-Graphics-83DV007GIN/dp/B0D49W5KZP', desc:'144Hz, upgradeable.'},
-            {name:'ASUS TUF A15 RTX 4050', price:'₹89,990 ref', tag:'Tough', href:'https://www.amazon.in/ASUS-15-6-inch-GeForce-Windows-FA507NUR-LP082W/dp/B0D5DCSNM1', desc:'MIL-STD, better cooling.'},
+            {name:'Motorola Motobook 60 (16GB OLED)', price:'Flipkart · live varies', tag:'Display King', store:'Flipkart', href:'https://www.flipkart.com/motorola-motobook-60-full-metal-2-8k-oled-i5-14th-gen-intel-core-5-series-2-210h-16-gb-512-gb-ssd-windows-11-home-14irh10r-thin-light-laptop/p/itme7b254581c42e?pid=COMHAUZW4MMNNCGT&lid=LSTCOMHAUZW4MMNNCGTEVATRK&marketplace=FLIPKART&cmpid=content_computer_8965229628_gmc', desc:'2.8K OLED + metal body at this price.'},
+            {name:'ASUS ExpertBook P1 P1403CVA (16GB)', price:'Flipkart · live varies', tag:'Business Pick', store:'Flipkart', href:'https://www.flipkart.com/asus-expertbook-p1-1-yr-adp-i5-14th-gen-intel-core-5-210h-16-gb-512-gb-ssd-windows-11-home-p1403cva-s61565ws-p1403cvayb-s62423ws-thin-light-laptop/p/itmd8d14da7d4e32?pid=COMHGYAFJWATPZ8K&marketplace=FLIPKART&lid=LSTCOMHGYAFJWATPZ8KIFU7U0', desc:'1-Yr ADP cover, upgradeable business build.'},
           ];
         } else {
           title='Do not buy full gaming - get OLED + RTX';
